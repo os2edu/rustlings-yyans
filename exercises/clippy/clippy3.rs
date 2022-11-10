@@ -8,7 +8,9 @@ fn main() {
     // if my_option.is_none() {
     //     my_option.unwrap();
     // }
-    my_option.unwrap();
+    if let Some(x) = my_option {
+        x
+    }
 
     let my_arr = &[
         -1, -2, -3,
@@ -25,7 +27,7 @@ fn main() {
     // Let's swap these two!
     // value_a = value_b;
     // value_b = value_a;
-    std::mem::swap(&mut value_a, &mut value_b);
+    let (value_a, value_b) = (value_b, value_a);
 
     println!("value a: {}; value b: {}", value_a, value_b);
 }
